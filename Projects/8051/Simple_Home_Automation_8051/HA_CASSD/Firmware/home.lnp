@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"home.obj" 
+TO "home" 
+RAMSIZE(256) 

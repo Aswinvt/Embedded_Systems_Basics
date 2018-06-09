@@ -1,0 +1,10 @@
+TARGETS = fake-hwclock dhcpcd triggerhappy apache2 motion lightdm bluetooth cups-browsed saned cups plymouth alsa-utils urandom avahi-daemon sendsigs rsyslog umountnfs.sh nfs-common rpcbind hwclock.sh networking umountfs umountroot halt reboot
+avahi-daemon: cups-browsed saned
+sendsigs: avahi-daemon cups-browsed triggerhappy apache2 plymouth motion saned alsa-utils lightdm bluetooth
+rsyslog: sendsigs avahi-daemon cups-browsed apache2 saned bluetooth cups
+umountnfs.sh: rsyslog sendsigs avahi-daemon cups-browsed triggerhappy apache2 plymouth motion saned alsa-utils lightdm bluetooth
+networking: rpcbind cups-browsed apache2 umountnfs.sh
+umountfs: rpcbind avahi-daemon dhcpcd cups-browsed triggerhappy apache2 umountnfs.sh plymouth motion saned alsa-utils lightdm networking urandom hwclock.sh bluetooth
+umountroot: umountfs fake-hwclock
+halt: umountroot
+reboot: umountroot

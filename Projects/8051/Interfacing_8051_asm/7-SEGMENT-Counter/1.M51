@@ -1,0 +1,76 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        07/06/2017  21:09:52  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\PROGRAM FILES (X86)\KEIL_V5\C51\BIN\BL51.EXE 1.obj TO 1
+
+
+INPUT MODULES INCLUDED:
+  1.obj (1)
+
+
+LINK MAP OF MODULE:  1 (1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0054H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  1 (1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        1
+  C:000DH         SYMBOL        BACK
+  C:004BH         SYMBOL        DELAY
+  C:004DH         SYMBOL        L1
+  C:004FH         SYMBOL        L2
+  D:00A0H         SYMBOL        P2
+  D:00B0H         SYMBOL        P3
+  C:0008H         SYMBOL        START
+  C:0000H         SYMBOL        STARTER
+  C:0000H         LINE#         2
+  C:0003H         LINE#         3
+  C:0006H         LINE#         4
+  C:0008H         LINE#         5
+  C:000AH         LINE#         6
+  C:000DH         LINE#         7
+  C:000FH         LINE#         8
+  C:0010H         LINE#         9
+  C:0011H         LINE#         10
+  C:0012H         LINE#         11
+  C:0014H         LINE#         12
+  C:0016H         LINE#         13
+  C:0018H         LINE#         14
+  C:001BH         LINE#         15
+  C:001CH         LINE#         16
+  C:001DH         LINE#         17
+  C:001EH         LINE#         18
+  C:0020H         LINE#         19
+  C:0021H         LINE#         20
+  C:0024H         LINE#         21
+  C:0026H         LINE#         22
+  C:004BH         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22                                                      07/06/2017  21:09:52  PAGE 2
+
+
+  C:004DH         LINE#         28
+  C:004FH         LINE#         29
+  C:0051H         LINE#         30
+  C:0053H         LINE#         31
+  -------         ENDMOD        1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003BH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=84
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,20 @@
+TARGETS = rsyslog dhcpcd triggerhappy killprocs bootlogs motd apache2 single dbus motion rsync ntp cron ssh dphys-swapfile avahi-daemon lightdm bluetooth cups-browsed saned cups plymouth rmnologin rc.local
+INTERACTIVE = apache2
+apache2: rsyslog
+single: killprocs bootlogs motd
+dbus: rsyslog
+motion: rsyslog
+rsync: rsyslog
+ntp: rsyslog
+cron: rsyslog
+ssh: rsyslog
+dphys-swapfile: rsyslog
+avahi-daemon: dbus rsyslog
+lightdm: dbus
+bluetooth: rsyslog dbus
+cups-browsed: rsyslog
+saned: rsyslog dbus
+cups: rsyslog
+plymouth: rsyslog avahi-daemon dbus dhcpcd cups-browsed triggerhappy apache2 motion saned lightdm bluetooth cups bootlogs motd rsync ntp cron ssh dphys-swapfile
+rmnologin: rsyslog avahi-daemon dbus dhcpcd cups-browsed triggerhappy apache2 motion saned lightdm bluetooth cups bootlogs motd rsync ntp cron ssh dphys-swapfile
+rc.local: rsyslog avahi-daemon dbus dhcpcd cups-browsed triggerhappy apache2 motion saned lightdm bluetooth cups bootlogs motd rsync ntp cron ssh dphys-swapfile

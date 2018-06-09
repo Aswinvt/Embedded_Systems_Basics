@@ -1,0 +1,32 @@
+        ORG 0000H
+STARTER:MOV P2,#3FH
+		MOV P3,#3FH
+        MOV R2,#01
+  START:MOV R1,#0AH
+        MOV DPTR,#0040H
+   BACK:ACALL DELAY
+        INC DPTR
+		CLR A
+        MOVC A,@A+DPTR
+        MOV P3,A
+		ACALL DELAY
+        DJNZ R1,BACK
+	    MOV DPTR,#0041H
+	    CLR A
+	    MOV A,R2
+        MOVC A,@A+DPTR
+	    MOV P2,A
+	    INC R2
+	    CJNE R2,#11,START
+		ACALL DELAY
+        SJMP STARTER
+
+        ORG 0041H
+        DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,67H
+
+  DELAY:MOV R4,255
+     L1:MOV R5,255
+     L2:DJNZ R5,L2
+	    DJNZ R4,L1
+	    RET
+        END

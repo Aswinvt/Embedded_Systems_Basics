@@ -1,0 +1,97 @@
+A51 MACRO ASSEMBLER  1                                                                    07/06/2017 21:09:51 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.5.0
+OBJECT MODULE PLACED IN 1.OBJ
+ASSEMBLER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\A51.EXE 1.asm SET(SMALL) DEBUG EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1             ORG 0000H
+
+0000 75A03F            2     STARTER:MOV P2,#3FH
+
+0003 75B03F            3                     MOV P3,#3FH
+
+0006 7A01              4             MOV R2,#01
+
+0008 790A              5       START:MOV R1,#0AH
+
+000A 900040            6             MOV DPTR,#0040H
+
+000D 114B              7        BACK:ACALL DELAY
+
+000F A3                8             INC DPTR
+
+0010 E4                9                     CLR A
+
+0011 93               10             MOVC A,@A+DPTR
+
+0012 F5B0             11             MOV P3,A
+
+0014 114B             12                     ACALL DELAY
+
+0016 D9F5             13             DJNZ R1,BACK
+
+0018 900041           14                 MOV DPTR,#0041H
+
+001B E4               15                 CLR A
+
+001C EA               16                 MOV A,R2
+
+001D 93               17             MOVC A,@A+DPTR
+
+001E F5A0             18                 MOV P2,A
+
+0020 0A               19                 INC R2
+
+0021 BA0BE4           20                 CJNE R2,#11,START
+
+0024 114B             21                     ACALL DELAY
+
+0026 80D8             22             SJMP STARTER
+
+                      23     
+
+0041                  24             ORG 0041H
+
+0041 3F065B4F         25             DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,67H
+
+0045 666D7D07                
+0049 7F67                    
+                      26     
+
+004B ACFF             27       DELAY:MOV R4,255
+
+004D ADFF             28          L1:MOV R5,255
+
+004F DDFE             29          L2:DJNZ R5,L2
+
+0051 DCFA             30                 DJNZ R4,L1
+
+0053 22               31                 RET
+
+                      32             END
+
+A51 MACRO ASSEMBLER  1                                                                    07/06/2017 21:09:51 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   000DH   A   
+DELAY. . . . . . .  C ADDR   004BH   A   
+L1 . . . . . . . .  C ADDR   004DH   A   
+L2 . . . . . . . .  C ADDR   004FH   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+START. . . . . . .  C ADDR   0008H   A   
+STARTER. . . . . .  C ADDR   0000H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+G:\Science & important files\My Wisdom\Electronics\S6\Mini project\Ready\Work\WORK INITIAL\Home\3\light.uvproj
+Project File Date:  03/24/2016
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling light.c...
+linking...
+Program Size: data=9.0 xdata=0 code=116
+creating hex file from "light"...
+"light" - 0 Error(s), 0 Warning(s).

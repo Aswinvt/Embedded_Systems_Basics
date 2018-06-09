@@ -1,0 +1,47 @@
+      org 0000h
+start:mov DPTR,#4500h
+      mov r2,DPL
+      mov r3,DPH
+      mov DPTR,#4600h
+      mov r4,DPL
+      mov r5,DPH
+      mov DPTR,#4700h 
+      mov r6,DPL
+      mov r7,DPH
+      mov a,40h
+      mov b,41h
+      mul ab
+      mov r0,a
+      mov a,42h
+      mov b,43h
+      mul ab
+      mov b,r0
+      cjne a,b,last1
+ back:mov DPL,r2
+	  mov DPH,r3
+	  movx a,@DPTR
+	  mov r1,a
+      inc DPTR
+	  mov r2,DPL
+      mov r3,DPH
+	  mov DPL,r4
+	  mov DPH,r5
+	  movx a,@DPTR
+	  mov b,r1
+      inc DPTR
+	  mov r4,DPL
+      mov r5,DPH
+      add a,b
+	  mov DPL,r6
+	  mov DPH,r7  
+      movx @DPTR,a
+	  inc DPTR
+	  mov r6,DPL
+	  mov r7,DPH
+      djnz r0,back
+	  ljmp last3 
+last1:mov DPTR,#4700h
+      mov a,#0eh
+      movx @DPTR,a
+last3:mov a,#00h
+      end 

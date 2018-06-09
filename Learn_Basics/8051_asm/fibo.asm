@@ -1,0 +1,21 @@
+org 0000h
+      mov r0,40h
+      mov r1,#41h
+	  cjne r0,#00h,l1
+ here:sjmp here
+   l1:mov @r1,#00h
+      cjne r0,#01h,l2
+   go:sjmp go
+   l2:inc r1
+	  mov @r1,#01h
+  	  cjne r0,#02h,loop1
+  sto:sjmp sto
+loop1:mov a,@r1
+	  dec r1
+	  add a,@r1
+	  inc r1
+	  inc r1
+	  mov @r1,a
+	  dec r0
+	  cjne r0,#02h,loop1
+end

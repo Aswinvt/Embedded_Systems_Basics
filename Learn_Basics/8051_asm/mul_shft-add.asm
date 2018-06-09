@@ -1,0 +1,44 @@
+	  org 0000h
+start:mov r0,#40h
+	  mov r1,#41h
+	  mov a,@r1
+	  anl a,#01h
+	  mov b,@r0
+	  mul ab
+	  mov r2,a
+	  mov a,@r1
+	  anl a,#02h
+	  rrc a
+	  mov b,@r0
+	  mul ab
+	  rlc a
+	  mov r3,a
+	  mov a,@r1
+	  anl a,#04h
+	  rrc a
+	  rrc a
+	  mov b,@r0
+	  mul ab
+	  rlc a
+	  rlc a
+	  mov r4,a
+	  mov a,@r1
+	  anl a,#08h
+	  rrc a
+	  rrc a
+	  rrc a
+	  mov b,@r0
+	  mul ab
+	  rlc a
+	  rlc a
+	  rlc a
+	  mov r5,a
+   ad:mov a, r2
+	  mov b,r3
+	  add a,b
+	  mov b,r4
+	  add a,b
+	  mov b,r5
+	  add a,b
+	  mov 42h,a
+end
