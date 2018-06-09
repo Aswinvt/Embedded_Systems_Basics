@@ -1,0 +1,33 @@
+     1: #include<pic.h>
+     2: char rec();
+     3: void trans(char a);
+     4: void main()
+     5: {
+     6:         int i;
+     7:         char a[10];
+     8:         TRISC=0X80;
+     9:         TXSTA=0X24;
+    10:         RCSTA=0X90;
+    11:         SPBRG=129;
+    12:         while(rec()!='*');
+    13:         for(i=0;a[i-1]!='#';i++)
+    14:         {
+    15:                 a[i]=rec();
+    16:         }
+    17:         a[i-1]='\0';
+    18:         for(i=0;a[i]!='\0';i++)
+    19:                 {
+    20:                         trans(a[i]);
+    21:                 }
+    22: }
+    23: void trans(char a)
+    24: {
+    25:         TXREG=a;
+    26:         while(TXIF==0);
+    27:         TXIF=0;
+    28: }
+    29: char rec()
+    30: {
+    31:         while(RCIF==0);
+    32:         return(RCREG);
+    33: }

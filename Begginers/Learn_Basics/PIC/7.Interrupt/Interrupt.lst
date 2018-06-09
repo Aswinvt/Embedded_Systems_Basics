@@ -1,0 +1,32 @@
+     1: #include<pic.h>
+     2: void delay();
+     3: void interrupt isr(void);
+     4: void main()
+     5: {
+     6:         TRISB=0X01;
+     7:         PORTB=0X00;
+     8:         TRISD=0X00;
+     9:         PORTD=0X00;
+    10:         INTEDG=0;
+    11:         GIE=1;
+    12:         PEIE=1;
+    13:         INTE=1;
+    14:         while(1);
+    15: }
+    16: void interrupt isr(void)
+    17: {
+    18:         if(INTF==1)
+    19:         {
+    20:                 PORTD=0XFF;
+    21:                 delay();
+    22:                 PORTD=0X00;
+    23:                 delay();
+    24:         }
+    25:         INTF=0;
+    26: }
+    27: void delay()
+    28: {
+    29:         int i,j;
+    30:         for(i=0;i<355;i++)
+    31:         for(j=0;j<350;j++);
+    32: }

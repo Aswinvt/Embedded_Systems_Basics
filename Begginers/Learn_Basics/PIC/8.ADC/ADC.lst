@@ -1,0 +1,51 @@
+     1: #include<pic.h>
+     2: void delay();
+     3: void cmd(int);
+     4: void data(char);
+     5: void main()
+     6: {
+     7:         char a,b,c,d;
+     8:         cmd(0X38);
+     9:         cmd(0X80);
+    10:         cmd(0X01);
+    11:         cmd(0X06);
+    12:         cmd(0X0E);
+    13:         TRISD=0X00;
+    14:         TRISA=0XFF;
+    15:         TRISB=0X00;
+    16:         ADCON0=0X01;
+    17:         ADCON1=0X00;
+    18:         ADGO=1;
+    19:         while(ADGO==1);
+    20:         a=ADRESH;
+    21:         b=((a/100)+48);
+    22:         data(b);
+    23:         c=(((a%100)/10)+48);
+    24:         data(c);
+    25:         d=((a%10)+48);
+    26:         data(d);
+    27:         delay();
+    28:         cmd(0X01);
+    29: }
+    30: void cmd(int a)
+    31: {
+    32:         PORTD=a;
+    33:         RB0=0;
+    34:         RB1=1;
+    35:         delay();
+    36:         RB1=0;
+    37: }
+    38: void data(char b)
+    39: {
+    40:         PORTD=b;
+    41:         RB0=1;
+    42:         RB1=1;
+    43:         delay();
+    44:         RB1=0;
+    45: }
+    46: void delay()
+    47: {
+    48:         int i,j;
+    49:         for(i=0;i<155;i++)
+    50:         for(j=0;j<150;j++);
+    51: }

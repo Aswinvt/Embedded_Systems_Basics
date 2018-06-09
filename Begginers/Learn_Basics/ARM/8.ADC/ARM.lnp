@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "adc.o" --strict --scatter "ARM.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\ARM.map" -o "ARM.axf"

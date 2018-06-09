@@ -1,0 +1,67 @@
+     1: #include<pic.h>
+     2: void cmd(int);
+     3: void data(char);
+     4: void display(const char *);
+     5: void delay();
+     6: void main()
+     7: {
+     8:         TRISB=0X00;
+     9:         TRISC=0XF0;
+    10:         TRISD=0X00;
+    11:         cmd(0X38);
+    12:         cmd(0X80);
+    13:         cmd(0X06);
+    14:         cmd(0X0E);
+    15:         cmd(0X01);
+    16:         while(1)
+    17:         {
+    18:                 if(RC4==0)
+    19:                 {
+    20:                         PORTB=0X1D;
+    21:                         display("FORWARD");
+    22:                         cmd(0X01);
+    23:                 }
+    24:                 else if(RC5==0)
+    25:                 {
+    26:                         PORTB=0X2E;
+    27:                         display("BACKWARD");
+    28:                         cmd(0X01);
+    29:                 }
+    30:                 else if(RC6==0)
+    31:                 {
+    32:                         PORTB=0X00;
+    33:                         display("STOP");
+    34:                         cmd(0X01);
+    35:                 }
+    36:         }
+    37: }
+    38: void cmd(int a)
+    39: {
+    40:         PORTD=a;
+    41:         RC0=0;
+    42:         RC1=1;
+    43:         delay();
+    44:         RC1=0;
+    45: }
+    46: void data(char b)
+    47: {
+    48:         PORTD=b;
+    49:         RC0=1;
+    50:         RC1=1;
+    51:         delay();
+    52:         RC1=0;
+    53: }
+    54: void display(const char *p)
+    55: {
+    56:         while(*p!='\0')
+    57:         {
+    58:                 data(*p);
+    59:                 p++;
+    60:         }
+    61: }
+    62: void delay()
+    63: {
+    64:         int i,j;
+    65:         for(i=0;i<255;i++)
+    66:         for(j=0;j<250;j++);
+    67: }

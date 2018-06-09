@@ -1,0 +1,60 @@
+     1: #include<pic.h>
+     2: void delay();
+     3: void main()
+     4: {
+     5:         int i;
+     6:         TRISB=0XFF;
+     7:         TRISD=0X00;
+     8:         while(1)
+     9:         {
+    10:                 if(RB0==1)
+    11:                 {
+    12:                         PORTD=0XFF;
+    13:                         delay();
+    14:                         PORTD=0X00;
+    15:                         delay();
+    16:                 }
+    17:                 else if(RB1==1)
+    18:                 {
+    19:                         PORTD=0X0F;
+    20:                         delay();
+    21:                         PORTD=0XF0;
+    22:                         delay();
+    23:                 }
+    24:                 else if(RB2==1)
+    25:                 {
+    26:                         PORTD=0X55;
+    27:                         delay();
+    28:                         PORTD=0XAA;
+    29:                         delay();
+    30:                 }
+    31:                 else if(RB3==1)
+    32:                 {
+    33:                         PORTD=0X01;
+    34:                         delay();
+    35:                         for(i=0;i<8;i++)
+    36:                         {
+    37:                                 PORTD=PORTD<<1;
+    38:                                 delay();
+    39:                         }
+    40:                 }
+    41:                 else if(RB4==1)
+    42:                 {
+    43:                         PORTD=0X80;
+    44:                         delay();
+    45:                         for(i=0;i<8;i++)
+    46:                         {
+    47:                                 PORTD=PORTD>>1;
+    48:                                 delay();
+    49:                         }
+    50:                 }
+    51:         }
+    52: }
+    53: void delay()
+    54: {
+    55:         int i,j;
+    56:         for(i=0;i<255;i++)
+    57:         for(j=0;j<250;j++);
+    58: }
+    59: 
+    60: 

@@ -1,0 +1,157 @@
+
+Timer1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000be  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .debug_aranges 00000020  00000000  00000000  00000112  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  2 .debug_pubnames 00000025  00000000  00000000  00000132  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   000000ad  00000000  00000000  00000157  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 0000006a  00000000  00000000  00000204  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_line   000000b0  00000000  00000000  0000026e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_frame  00000030  00000000  00000000  00000320  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    00000077  00000000  00000000  00000350  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	ee eb       	ldi	r30, 0xBE	; 190
+  68:	f0 e0       	ldi	r31, 0x00	; 0
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
+
+0000006c <.do_copy_data_loop>:
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+
+00000070 <.do_copy_data_start>:
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <.do_copy_data_loop>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a0 36       	cpi	r26, 0x60	; 96
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 49 00 	call	0x92	; 0x92 <main>
+  8a:	0c 94 5d 00 	jmp	0xba	; 0xba <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__heap_end>
+
+00000092 <main>:
+#include<avr/io.h>
+#include<util/delay.h>
+void timer();
+void main()
+{
+  92:	9f ef       	ldi	r25, 0xFF	; 255
+  94:	91 bb       	out	0x11, r25	; 17
+	DDRD=0XFF;
+	TCCR1B=0X03;
+  96:	83 e0       	ldi	r24, 0x03	; 3
+  98:	8e bd       	out	0x2e, r24	; 46
+	TCNT1H=0XFF;
+  9a:	9d bd       	out	0x2d, r25	; 45
+	TCNT1L=0XFF;
+  9c:	9c bd       	out	0x2c, r25	; 44
+	while(1)
+	{
+		PORTD=0XFF;
+  9e:	8f ef       	ldi	r24, 0xFF	; 255
+  a0:	82 bb       	out	0x12, r24	; 18
+		timer();
+	}
+}
+void timer()
+{
+	while((TIFR&0X40)==0);
+  a2:	08 b6       	in	r0, 0x38	; 56
+  a4:	06 fe       	sbrs	r0, 6
+  a6:	fd cf       	rjmp	.-6      	; 0xa2 <main+0x10>
+	TCNT1L=0XFF;
+	while(1)
+	{
+		PORTD=0XFF;
+		timer();
+		PORTD=0X00;
+  a8:	12 ba       	out	0x12, r1	; 18
+		timer();
+	}
+}
+void timer()
+{
+	while((TIFR&0X40)==0);
+  aa:	08 b6       	in	r0, 0x38	; 56
+  ac:	06 fe       	sbrs	r0, 6
+  ae:	fd cf       	rjmp	.-6      	; 0xaa <main+0x18>
+  b0:	f7 cf       	rjmp	.-18     	; 0xa0 <main+0xe>
+
+000000b2 <timer>:
+		PORTD=0X00;
+		timer();
+	}
+}
+void timer()
+{
+  b2:	08 b6       	in	r0, 0x38	; 56
+  b4:	06 fe       	sbrs	r0, 6
+  b6:	fd cf       	rjmp	.-6      	; 0xb2 <timer>
+	while((TIFR&0X40)==0);
+}
+  b8:	08 95       	ret
+
+000000ba <_exit>:
+  ba:	f8 94       	cli
+
+000000bc <__stop_program>:
+  bc:	ff cf       	rjmp	.-2      	; 0xbc <__stop_program>

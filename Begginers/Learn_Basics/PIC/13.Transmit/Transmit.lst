@@ -1,0 +1,25 @@
+     1: #include<pic.h>
+     2: void trans(char);
+     3: void delay();
+     4: void main()
+     5: {
+     6:         int i;
+     7:         char a[]="SMEC";
+     8:         TRISC=0X80;
+     9:         TXSTA=0X24;
+    10:         RCSTA=0X90;
+    11:         SPBRG=129;
+    12:         for(i=0;a[i]!='\0';i++)
+    13:         {
+    14:                 trans(a[i]);
+    15:         }
+    16:         while(1);
+    17: }
+    18: 
+    19: void trans(char a)
+    20: {
+    21:         TXREG=a;
+    22:         while(TXIF==0);
+    23:         TXIF=0;
+    24: }
+    25: 

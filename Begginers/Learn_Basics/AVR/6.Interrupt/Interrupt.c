@@ -1,0 +1,31 @@
+#include<avr/io.h>
+#include<util/delay.h>
+#include<avr/interrupt.h>
+void main()
+{
+	PORTD=0X00;
+	PORTB=0XFF;
+	MCUCR=0X02;
+	GICR=0X40;
+	while(1)
+	{
+		PORTB=0XFF;
+		_delay_ms(1000);
+		PORTB=0X00;
+		_delay_ms(1000);
+		sei();
+	}
+}
+ISR(INT0_vect)
+{
+	int i;
+	cli();
+	PORTB=0X01;
+	_delay_ms(1000);
+	for(i=0;i<8;i++)
+	{
+		PORTB=PORTB<<1;
+		_delay_ms(1000);
+	}
+sei();
+}

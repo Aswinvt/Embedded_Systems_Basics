@@ -1,0 +1,26 @@
+     1: #include<pic.h>
+     2: void delay();
+     3: void main()
+     4: {
+     5:         int i;
+     6:         TRISD=0X00;
+     7:         while(1)
+     8:         {
+     9:                 PORTD=0X80;
+    10:                 delay();
+    11:                 for(i=0;i<8;i++)
+    12:                 {
+    13:                         PORTD=PORTD>>1;
+    14:                         delay();
+    15:                 }
+    16:         }
+    17: }
+    18: void delay()
+    19: {
+    20:         int i,j;
+    21:         for(i=0;i<200;i++)
+    22:         for(j=0;j<200;j++);
+    23: }
+    24: 
+    25: 
+    26: 

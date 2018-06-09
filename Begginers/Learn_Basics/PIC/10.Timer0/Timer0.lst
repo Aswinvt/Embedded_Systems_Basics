@@ -1,0 +1,20 @@
+     1: #include<pic.h>
+     2: void timer();
+     3: void main()
+     4: {
+     5:         TRISD=0X00;
+     6:         OPTION=0X07;
+     7:         TMR0=0X00;
+     8:         while(1)
+     9:         {
+    10:                 PORTD=0XFF;
+    11:                 timer();
+    12:                 PORTD=0X00;
+    13:                 timer();
+    14:         }
+    15: }
+    16: void timer()
+    17: {
+    18:         while(TMR0IF==0);
+    19:         TMR0IF=0;
+    20: }

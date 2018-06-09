@@ -1,0 +1,46 @@
+     1: #include<pic.h>
+     2: void cmd(int);
+     3: void data(char);
+     4: void delay();
+     5: void display(const char *);
+     6: void main()
+     7: {
+     8:         TRISD=0X00;
+     9:         TRISC=0X00;
+    10:         cmd(0X38);
+    11:         cmd(0X80);
+    12:         cmd(0X01);
+    13:         cmd(0X06);
+    14:         cmd(0X0E);
+    15:         display("hai");
+    16: }
+    17: void cmd(int a)
+    18: {
+    19:         PORTD=a;
+    20:         RC0=0;
+    21:         RC1=1;
+    22:         delay();
+    23:         RC1=0;
+    24: }
+    25: void data(char b)
+    26: {
+    27:         PORTD=b;
+    28:         RC0=1;
+    29:         RC1=1;
+    30:         delay();
+    31:         RC1=0;
+    32: }
+    33: void display(const char *p)
+    34: {
+    35:         while(*p!='\0')
+    36:         {
+    37:                 data(*p);
+    38:                 p++;
+    39:         }
+    40: }
+    41: void delay()
+    42: {
+    43:         int i,j;
+    44:         for(i=0;i<255;i++)
+    45:         for(j=0;j<250;j++);
+    46: }

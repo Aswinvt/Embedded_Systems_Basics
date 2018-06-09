@@ -1,0 +1,4 @@
+--device DARMP "startup.o" "lcd_swtch.o" --strict --scatter "LCD_SWTCH.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\LCD_SWTCH.map" -o "LCD_SWTCH.axf"

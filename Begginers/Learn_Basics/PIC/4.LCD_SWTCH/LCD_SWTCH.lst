@@ -1,0 +1,89 @@
+     1: #include<pic.h>
+     2: void cmd(int);
+     3: void data(char);
+     4: void display(const char *);
+     5: void delay();
+     6: void main()
+     7: {       
+     8:         int i;
+     9:         TRISB=0X00;
+    10:         TRISD=0X00;
+    11:         TRISC=0XF0;
+    12:         cmd(0X38);
+    13:         cmd(0X80);
+    14:         cmd(0X01);
+    15:         cmd(0X06);
+    16:         cmd(0X0E);
+    17:         while(1)
+    18:         {
+    19:                 if(RC4==0)
+    20:                 {
+    21:                         PORTB=0XFF;
+    22:                         delay();
+    23:                         PORTB=0X00;
+    24:                         delay();
+    25:                         display("BLINKING");
+    26:                         cmd(0X01);
+    27:                 }
+    28:                 else if(RC5==0)
+    29:                 {
+    30:                         PORTB=0X0F;
+    31:                         delay();
+    32:                         PORTB=0XF0;
+    33:                         delay();
+    34:                         display("4BY4");
+    35:                         cmd(0X01);
+    36:                 }
+    37:                 else if(RC6==0)
+    38:                 {
+    39:                         PORTB=0XAA;
+    40:                         delay();
+    41:                         PORTB=0X55;
+    42:                         delay();
+    43:                         display("ALTERNATE");
+    44:                         cmd(0X01);
+    45:                 }
+    46:                 else if(RC7==0)
+    47:                 {
+    48:                         PORTB=0X01;
+    49:                         cmd(0X01);
+    50:                         display("UP-DOWN");
+    51:                         delay();
+    52:                         for(i=0;i<8;i++)
+    53:                         {
+    54:                                 PORTB=PORTB<<1;
+    55:                                 delay();
+    56:                         }
+    57:                 }
+    58:         }
+    59: }
+    60: void cmd(int a)
+    61: {
+    62:         PORTD=a;
+    63:         RC0=0;
+    64:         RC1=1;
+    65:         delay();
+    66:         RC1=0;
+    67: }
+    68: void data(char b)
+    69: {
+    70:         PORTD=b;
+    71:         RC0=1;
+    72:         RC1=1;
+    73:         delay();
+    74:         RC1=0;
+    75: }
+    76: void display(const char *p)
+    77: {
+    78:         while(*p!='\0')
+    79:         {
+    80:                 data(*p);
+    81:                 p++;
+    82:         }
+    83: }
+    84: void delay()
+    85: {
+    86:         int i,j;
+    87:         for(i=0;i<255;i++)
+    88:         for(j=0;j<250;j++);
+    89: }

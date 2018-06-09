@@ -1,0 +1,20 @@
+*** Creating Trace Output File 'PWM.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup.o"'
+### List of Objects: adding '"pwm.o"'
+### ADS-LD Command completed:
+--device DARMP "startup.o" "pwm.o" --strict --scatter "PWM.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\PWM.map" -o "PWM.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'PWM.axf'
+### ADS-LD Command File: 'PWM.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'PWM.lnp', Handle=0x00000558
+### Writing '.lnp' file
+### ADS-LD Command file 'PWM.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
