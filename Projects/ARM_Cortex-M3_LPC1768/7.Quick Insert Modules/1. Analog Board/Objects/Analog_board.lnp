@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\objects\startup_lpc17xx.o"
+".\objects\system_lpc17xx.o"
+".\objects\adc.o"
+".\objects\delay_ms.o"
+".\objects\pwm.o"
+".\objects\gpio.o"
+".\objects\uart.o"
+".\objects\uart_int.o"
+".\objects\main.o"
+".\objects\split.o"
+--strict --scatter ".\Objects\Analog_board.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Analog_board.map" -o .\Objects\Analog_board.axf

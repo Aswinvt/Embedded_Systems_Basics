@@ -1,0 +1,49 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              08/29/2018 20:43:41 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REG8253.H>
+   2          
+   3          void timer(unsigned int d);
+   4          
+   5          void main(){
+   6   1        while(1){
+   7   2          P2 = 0XFF;                  // Port2 is turned ON
+   8   2          timer(1000);                // Delay of 1 sec using Timer
+   9   2          P2 = 0X00;                  // Port2 is turned ON
+  10   2          timer(1000);                // Delay of 1 sec using Timer
+  11   2        }
+  12   1      }
+  13          
+  14          void timer(unsigned int d){     // Timer0 to generate a delay.
+  15   1        int i;
+  16   1        for(i=0;i<d;i++){             // Loop for repeating the Timer delay for X times
+  17   2          TMOD = 0x01;                // Set timer0 in mode 1
+  18   2          TL0 = 0xCB;                 // Timer value for 1us delay
+  19   2          TH0 = 0xFA;
+  20   2          TR0 = 1;                    // Enable Timer 0
+  21   2          while(!TF0);                // Wait till timer count overflow
+  22   2          TF0 = 0;                    // Reset the overflow flag
+  23   2          TR0 = 0;                    // Disable Timer 0
+  24   2        }
+  25   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     58    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

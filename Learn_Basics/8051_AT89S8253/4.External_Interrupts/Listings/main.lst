@@ -1,0 +1,47 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              08/29/2018 20:42:40 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REG8253.H>
+   2          
+   3          void Delay(int k){
+   4   1        int i, j;
+   5   1        for(i=0;i<k;i++){
+   6   2          for(j=0;j<100;j++);
+   7   2        }
+   8   1      }
+   9          
+  10          void ex0_isr (void) interrupt 0  {  //interrupt subroutine for ext interrupt o
+  11   1        P0=0xFF;
+  12   1        Delay(2000);                      //Wait for some time
+  13   1      }
+  14          
+  15          void main (void){
+  16   1        IT0 = 1;                          // Configure interrupt 0 for falling edge on /INT0 (P3.2)
+  17   1        EX0 = 1;                          // Enable EX0 Interrupt INT0 (P3.2)
+  18   1        EA  = 1;                          // Enable Global Interrupt Flag
+  19   1      
+  20   1        while (1){
+  21   2          P0=0x00;
+  22   2        }
+  23   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     99    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

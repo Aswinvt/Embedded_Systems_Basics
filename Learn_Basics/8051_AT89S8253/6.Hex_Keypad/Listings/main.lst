@@ -1,0 +1,162 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              08/29/2018 20:43:04 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <reg8253.h>
+   2          
+   3          void cmd(int a);
+   4          void _data(char b);
+   5          void _delay(int k);
+   6          char key(void);
+   7          
+   8          void main(){
+   9   1        char a;
+  10   1        P0 = 0XF0;                    // INITIALIZE P0 4-BIT IN LSB AS OUTPUT AND 4-BIT IN MSB AS INPUT
+  11   1        cmd(0X38);                    // INITIALIZE LCD IN 8 BIT MODE
+  12   1        cmd(0X01);                    // CLEAR DISPLAY REGISTER OF LCD
+  13   1        cmd(0X80);                    // CURSOR POSITION AT STARTING POSITION (LINE1,POSITION1)
+  14   1        cmd(0X06);                    // CURSOR SHIFT
+  15   1        cmd(0X0E);                    // CURSOR BLINK
+  16   1        while(1){
+  17   2          a=key();
+  18   2          _data(a);
+  19   2        }
+  20   1      }
+  21          
+  22          void cmd(int a){
+  23   1          P2=a;
+  24   1          P1=0X01;
+  25   1          _delay(100);
+  26   1          P1=0X00;
+  27   1      }
+  28          
+  29          void _data(char b){
+  30   1          P2=b;
+  31   1          P1=0X05;
+  32   1          _delay(10);
+  33   1          P1=0X04;
+  34   1      }
+  35          
+  36          void _delay(int k){
+  37   1        int i, j;
+  38   1        for(i=0;i<k;i++){
+  39   2          for(j=0;j<100;j++);
+  40   2        }
+  41   1      }
+  42          
+  43          char key(){
+  44   1        int e;
+  45   1        while(1){
+  46   2          P0=0XF7;                        // FOR READING THE FIRST ROW
+  47   2          _delay(10);
+  48   2          e=P0&0XF0;
+  49   2          switch(e){
+  50   3            
+  51   3            case 0x70:
+  52   3              while(!P0_7);
+  53   3              return('1');
+  54   3            
+C51 COMPILER V9.56.0.0   MAIN                                                              08/29/2018 20:43:04 PAGE 2   
+
+  55   3            case 0xB0:
+  56   3              while(!P0_6);
+  57   3              return('2');
+  58   3            
+  59   3            case 0xD0:
+  60   3              while(!P0_5);
+  61   3              return('3');
+  62   3            
+  63   3            case 0xE0:
+  64   3              while(!P0_4);
+  65   3              return('A');
+  66   3          }
+  67   2          
+  68   2          P0=0XFB;                        // FOR READING THE SECOND ROW
+  69   2          _delay(10);                     // SET SOME DELAY FOR PORT VALUE
+  70   2          e=P0&0XF0;
+  71   2          switch(e){
+  72   3            
+  73   3            case 0x70:
+  74   3              while(!P0_7);               // ELIMINATE DEBOUNCE
+  75   3              return('4');
+  76   3            
+  77   3            case 0xB0:
+  78   3              while(!P0_6);
+  79   3              return('5');
+  80   3            
+  81   3            case 0xD0:
+  82   3              while(!P0_5);
+  83   3              return('6');
+  84   3            
+  85   3            case 0xE0:
+  86   3              while(!P0_4);
+  87   3              return('B');
+  88   3          }
+  89   2          
+  90   2          P0=0XFD;                        // FOR READING THE THIRD ROW
+  91   2          _delay(10);
+  92   2          e=P0&0XF0;
+  93   2          switch(e){
+  94   3            
+  95   3            case 0x70:
+  96   3              while(!P0_7);
+  97   3              return('7');
+  98   3            
+  99   3            case 0xB0:
+ 100   3              while(!P0_6);
+ 101   3              return('8');
+ 102   3            
+ 103   3            case 0xD0:
+ 104   3              while(!P0_5);
+ 105   3              return('9');
+ 106   3            
+ 107   3            case 0xE0:
+ 108   3              while(!P0_4);
+ 109   3              return('C');
+ 110   3          }
+ 111   2          
+ 112   2          P0=0XFE;                        // FOR READING THE FOURTH ROW
+ 113   2          _delay(10);
+ 114   2          e=P0&0XF0;
+ 115   2          switch(e){
+ 116   3            
+C51 COMPILER V9.56.0.0   MAIN                                                              08/29/2018 20:43:04 PAGE 3   
+
+ 117   3            case 0x70:
+ 118   3              while(!P0_7);
+ 119   3              return('*');
+ 120   3            
+ 121   3            case 0xB0:
+ 122   3              while(!P0_6);
+ 123   3              return('0');
+ 124   3            
+ 125   3            case 0xD0:
+ 126   3              while(!P0_5);
+ 127   3              return('#');
+ 128   3            
+ 129   3            case 0xE0:
+ 130   3              while(!P0_4);
+ 131   3              return('D');
+ 132   3          }
+ 133   2        }
+ 134   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    344    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,12 @@
+--cpu Cortex-M3
+".\objects\startup_lpc17xx.o"
+".\objects\system_lpc17xx.o"
+".\objects\uart_int.o"
+".\objects\uart.o"
+".\objects\gpio.o"
+".\objects\delay.o"
+".\objects\main.o"
+--strict --scatter ".\Objects\DHT-11X.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\DHT-11X.map" -o .\Objects\DHT-11X.axf

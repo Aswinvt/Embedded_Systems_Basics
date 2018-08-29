@@ -1,0 +1,11 @@
+--cpu Cortex-M3
+".\objects\startup_lpc17xx.o"
+".\objects\system_lpc17xx.o"
+".\objects\pwm.o"
+".\objects\gpio.o"
+".\objects\main.o"
+".\objects\update.o"
+--strict --scatter ".\Objects\PWM.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\PWM.map" -o .\Objects\PWM.axf

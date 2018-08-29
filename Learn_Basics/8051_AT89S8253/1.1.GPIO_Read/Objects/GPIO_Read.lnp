@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\GPIO_Read" 
+PRINT(".\Listings\GPIO_Read.m51") RAMSIZE(256) 

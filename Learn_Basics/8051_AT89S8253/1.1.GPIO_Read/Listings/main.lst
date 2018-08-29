@@ -1,0 +1,44 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              08/29/2018 20:42:10 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REG8253.H>
+   2          
+   3          void Delay(int k){
+   4   1        int i,j;
+   5   1        for(i=0;i<k;i++){
+   6   2          for(j=0;j<100;j++);
+   7   2        }
+   8   1      }
+   9          
+  10          void main(){
+  11   1          while(1){
+  12   2              P2_0 = 1;             //Port2 0th pin is made an input port
+  13   2              if(P2_0 == 0){
+  14   3                  P0 = 0x00;        //Blinks the LEDs connected to the Port0 with a delay
+  15   3                  Delay(250);
+  16   3                  P0 = 0xFF;
+  17   3                  Delay(250);
+  18   3              }
+  19   2          }
+  20   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     60    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -3,12 +3,9 @@
 
 
 
-# Embedded_Learning
+# Embedded Systems Basics
 
-This is a set of codes done on ATMEGA32, PIC16f877A and LPC21XX during my learning period. It also contains the simulation files for proteus.
-
-## Things to be noted
-There won't be any format or comments in the program file. It might be updated in the future, for now its just a reference code for simulations and testings.
+This is a set of codes done on 8051(AT89S52 and AT89S8253), ATMEGA32, PIC16f877A, LPC21XX and LPC17XX during my learning period. It also contains the simulation files for proteus.
 
 ### Prerequisites
 

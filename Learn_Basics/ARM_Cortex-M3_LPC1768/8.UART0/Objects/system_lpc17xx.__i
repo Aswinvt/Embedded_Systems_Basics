@@ -1,0 +1,6 @@
+-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections
+-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"
+-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"
+-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"
+-D__UVISION_VERSION="524"
+-o .\objects\system_lpc17xx.o --omf_browse .\objects\system_lpc17xx.crf --depend .\objects\system_lpc17xx.d "system_LPC17xx.c"

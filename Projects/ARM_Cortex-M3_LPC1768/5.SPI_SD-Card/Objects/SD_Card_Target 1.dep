@@ -1,0 +1,68 @@
+Dependencies for Project 'SD_Card', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_LPC17xx.s)(0x559CF5C2)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"--pd "__UVISION_VERSION SETA 524"--list .\listings\startup_lpc17xx.lst --xref -o .\objects\startup_lpc17xx.o --depend .\objects\startup_lpc17xx.d)
+F (.\spi.c)(0x5A1024A8)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
+I (spi.h)(0x5A0FD00F)
+I (gpio.h)(0x5A0D6061)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+F (.\gpio.c)(0x5A0D49E3)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+I (gpio.h)(0x5A0D6061)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+F (.\main.c)(0x5A320927)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (spi.h)(0x5A0FD00F)
+I (gpio.h)(0x5A0D6061)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+I (uart_int.h)(0x5A0D8682)
+I (uart.h)(0x5A02D524)
+I (sdcard.h)(0x5A0FDE4C)
+F (C:\Keil_v5\ARM\Startup\NXP\LPC17xx\system_LPC17xx.c)(0x00000000)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\system_lpc17xx.o --omf_browse .\objects\system_lpc17xx.crf --depend .\objects\system_lpc17xx.d)
+F (.\uart.c)(0x5A02D8D2)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+I (uart.h)(0x5A02D524)
+I (uart_int.h)(0x5A0D8682)
+F (.\uart_int.c)(0x5A0D8694)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\uart_int.o --omf_browse .\objects\uart_int.crf --depend .\objects\uart_int.d)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+I (uart_int.h)(0x5A0D8682)
+F (.\sdcard.c)(0x5A10260E)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\sdcard.o --omf_browse .\objects\sdcard.crf --depend .\objects\sdcard.d)
+I (spi.h)(0x5A0FD00F)
+I (gpio.h)(0x5A0D6061)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+I (sdcard.h)(0x5A0FDE4C)
+I (fat32.h)(0x59CD02FA)
+I (stdutils.h)(0x59CD02FA)
+F (.\fat32.c)(0x5A0EA581)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\fat32.o --omf_browse .\objects\fat32.crf --depend .\objects\fat32.d)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\string.h)(0x588BA66C)
+I (stdutils.h)(0x59CD02FA)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (fat32.h)(0x59CD02FA)
+I (uart.h)(0x5A02D524)
+I (sdcard.h)(0x5A0FDE4C)

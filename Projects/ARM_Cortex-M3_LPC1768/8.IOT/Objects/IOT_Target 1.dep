@@ -1,0 +1,54 @@
+Dependencies for Project 'IOT', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_LPC17xx.s)(0x55AF1572)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"--pd "__UVISION_VERSION SETA 524"--list .\listings\startup_lpc17xx.lst --xref -o .\objects\startup_lpc17xx.o --depend .\objects\startup_lpc17xx.d)
+F (C:\Keil_v5\ARM\Startup\NXP\LPC17xx\system_LPC17xx.c)(0x00000000)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\system_lpc17xx.o --omf_browse .\objects\system_lpc17xx.crf --depend .\objects\system_lpc17xx.d)
+F (.\WiFiIOT.c)(0x5A5077AB)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\wifiiot.o --omf_browse .\objects\wifiiot.crf --depend .\objects\wifiiot.d)
+I (WiFiIOT.h)(0x5A13E2FE)
+I (filtering.h)(0x5A13E4B4)
+I (uart.h)(0x5A13E4AC)
+I (uart_int.h)(0x5A13E28B)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+I (LED_ctl.h)(0x5A13E184)
+F (.\uart.c)(0x5A13E2B6)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+I (uart.h)(0x5A13E4AC)
+I (uart_int.h)(0x5A13E28B)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+F (.\uart_int.c)(0x5A13E292)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\uart_int.o --omf_browse .\objects\uart_int.crf --depend .\objects\uart_int.d)
+I (uart_int.h)(0x5A13E28B)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+F (.\filtering.c)(0x5A13E2F8)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\filtering.o --omf_browse .\objects\filtering.crf --depend .\objects\filtering.d)
+I (filtering.h)(0x5A13E4B4)
+I (uart.h)(0x5A13E4AC)
+I (uart_int.h)(0x5A13E28B)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+F (.\LED_ctl.c)(0x5A13E177)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections-I"C:\Program Files (x86)\Keil_v5\ARM\RV31\INC"-I"C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include"-I"C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx"-D__UVISION_VERSION="524"-o .\objects\led_ctl.o --omf_browse .\objects\led_ctl.crf --depend .\objects\led_ctl.d)
+I (WiFiIOT.h)(0x5A13E2FE)
+I (filtering.h)(0x5A13E4B4)
+I (uart.h)(0x5A13E4AC)
+I (uart_int.h)(0x5A13E28B)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\lpc17xx.h)(0x55AF15B4)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cm3.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\ARMCC\include\stdint.h)(0x588BA66C)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmInstr.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x55AF17E8)
+I (C:\Program Files (x86)\Keil_v5\ARM\INC\NXP\LPC17xx\system_LPC17xx.h)(0x55AF15B4)
+I (LED_ctl.h)(0x5A13E184)

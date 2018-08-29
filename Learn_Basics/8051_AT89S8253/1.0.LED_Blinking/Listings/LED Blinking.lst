@@ -1,0 +1,42 @@
+C51 COMPILER V9.56.0.0   LED_BLINKING                                                      08/29/2018 20:41:59 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE LED_BLINKING
+OBJECT MODULE PLACED IN .\Objects\LED Blinking.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\C51.EXE LED Blinking.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECT
+                    -EXTEND PRINT(.\Listings\LED Blinking.lst) TABS(2) OBJECT(.\Objects\LED Blinking.obj)
+
+line level    source
+
+   1          #include <reg8253.h>
+   2          
+   3          void Delay(int k){
+   4   1        int j;
+   5   1        int i;
+   6   1        for(i=0;i<k;i++){
+   7   2          for(j=0;j<100;j++);
+   8   2        }
+   9   1      }
+  10          
+  11          void main (void){
+  12   1          while(1){                    // infinite loop
+  13   2                  P2 = 0X01;           // LED ON
+  14   2                  Delay(1000);
+  15   2                  P2 = 0X00;           // LED OFF
+  16   2                  Delay(1000);
+  17   2          }
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     56    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

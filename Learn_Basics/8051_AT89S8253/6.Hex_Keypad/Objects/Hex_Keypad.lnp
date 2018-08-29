@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\Hex_Keypad" 
+PRINT(".\Listings\Hex_Keypad.m51") RAMSIZE(256) 

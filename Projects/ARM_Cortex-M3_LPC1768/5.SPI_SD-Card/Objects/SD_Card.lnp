@@ -1,0 +1,14 @@
+--cpu Cortex-M3
+".\objects\startup_lpc17xx.o"
+".\objects\spi.o"
+".\objects\gpio.o"
+".\objects\main.o"
+".\objects\system_lpc17xx.o"
+".\objects\uart.o"
+".\objects\uart_int.o"
+".\objects\sdcard.o"
+".\objects\fat32.o"
+--strict --scatter ".\Objects\SD_Card.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\SD_Card.map" -o .\Objects\SD_Card.axf

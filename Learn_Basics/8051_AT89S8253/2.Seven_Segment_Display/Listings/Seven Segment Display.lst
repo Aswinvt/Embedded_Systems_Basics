@@ -1,0 +1,45 @@
+C51 COMPILER V9.56.0.0   SEVEN_SEGMENT_DISPLAY                                             08/29/2018 20:42:21 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE SEVEN_SEGMENT_DISPLAY
+OBJECT MODULE PLACED IN .\Objects\Seven Segment Display.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\C51.EXE Seven Segment Display.c OPTIMIZE(8,SPEED) BROWSE DEB
+                    -UG OBJECTEXTEND PRINT(.\Listings\Seven Segment Display.lst) TABS(2) OBJECT(.\Objects\Seven Segment Display.obj)
+
+line level    source
+
+   1          #include <reg8253.h>
+   2          
+   3          void Delay(int k){
+   4   1        int j;
+   5   1        int i;
+   6   1        for(i=0;i<k;i++){
+   7   2          for(j=0;j<100;j++);
+   8   2        }
+   9   1      }
+  10          
+  11          void main (void){
+  12   1        int i;                         /*{  0,  1,   2,   3,   4,   5,   6,   7,   8,   9  } SEGMENT CODE FOR COMMON ANODE*/
+  13   1        unsigned char const SEG_CODE[] = {0xC0,0xf9,0xA4,0xB0,0x99,0x92,0x82,0xf8,0x80,0x90};
+  14   1        while(1){                      // infinite loop
+  15   2          P1 = 0X0F;                   // Control port
+  16   2          for(i=0; i<10; i++){
+  17   3            P2 = SEG_CODE[i];          // Data port
+  18   3            Delay(1000);
+  19   3          }
+  20   2        }
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     90    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      10
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\Timer_PWM" 
+PRINT(".\Listings\Timer_PWM.m51") RAMSIZE(256) 

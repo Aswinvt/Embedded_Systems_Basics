@@ -1,0 +1,65 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              08/29/2018 20:42:49 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <reg8253.h>
+   2          
+   3          void cmd(int a);
+   4          void _data(char b);
+   5          void display(const char *p);
+   6          void _delay(int k);
+   7          
+   8          void main(){
+   9   1          cmd(0X38);             // Initialize LCD in 8-bit mode
+  10   1          cmd(0X01);             // Clear LCD display register
+  11   1          cmd(0X80);             // Move curser to 0th position of Line 1
+  12   1          cmd(0X06);             // Curser Shift
+  13   1          cmd(0X0E);             // Curser Blink
+  14   1          _data('H');
+  15   1          _data('E');
+  16   1          _data('L');
+  17   1          _data('L');
+  18   1          _data('O');
+  19   1      }
+  20          
+  21          void cmd(int a){
+  22   1          P2=a;                   // Load data on the data port.
+  23   1          P1=0X01;                // Set RS pin and R/W pin as LOW and Set enable pin HIGH 
+  24   1          _delay(500);
+  25   1          P1=0X00;                // Set enable pin LOW
+  26   1      }
+  27          
+  28          void _data(char b){
+  29   1          P2=b;                   // Load data on the data port.
+  30   1          P1=0X05;                // Set R/W pin as LOW and Set RS pin as HIGH and Set enable pin HIGH 
+  31   1          _delay(500);
+  32   1          P1=0X04;                // Set enable pin LOW
+  33   1      }
+  34          
+  35          void _delay(int k){
+  36   1        int j;
+  37   1        int i;
+  38   1        for(i=0;i<k;i++){
+  39   2          for(j=0;j<100;j++);
+  40   2        }
+  41   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    130    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

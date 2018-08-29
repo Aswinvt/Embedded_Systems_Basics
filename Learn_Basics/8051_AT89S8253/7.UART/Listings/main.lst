@@ -1,0 +1,66 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              08/29/2018 20:43:18 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Program Files (x86)\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REG8253.H>
+   2          
+   3          /* uart initialisation function */
+   4          void UART_init()
+   5          {
+   6   1        SCON=0x50;                              // Configure serial control register
+   7   1        PCON=0x80;                              // SMOD bit set
+   8   1        TMOD=0x20;                              // Using timer1,8-bit reload mode for baudrate generation
+   9   1        TH1=0xF7;                               // 9600 baudrate(16 mhz clock)
+  10   1        TR1=1;                                  // Start timer
+  11   1      }
+  12          
+  13          /* function to receive a character in uart */    
+  14          unsigned char Uart_read_char(){
+  15   1        unsigned char character;
+  16   1        while(!RI);                             // Wait until character received completely
+  17   1        character=SBUF;                         // Read the character from buffer reg
+  18   1        RI=0;                                   // Clear the flag
+  19   1        return character;                       // Return the received character
+  20   1      }
+  21          
+  22          /* function to transmit a character in uart */
+  23          void Uart_write_char(unsigned char character){
+  24   1        SBUF=character;                         // Load the character to be transmitted in to the buffer reg
+  25   1        while(!TI);                             // Wait until transmission complete
+  26   1        TI=0;                                   // Clear flag
+  27   1      }
+  28          
+  29          void main(){
+  30   1        unsigned char received;     
+  31   1        UART_init();
+  32   1        Uart_write_char('H');                   // Write a user defined character
+  33   1        Uart_write_char('E');
+  34   1        Uart_write_char('L');
+  35   1        Uart_write_char('L');
+  36   1        Uart_write_char('O');
+  37   1        Uart_write_char(0X0D);                  // For Enter new line
+  38   1        while(1){
+  39   2          received=Uart_read_char();            // Receive character
+  40   2          Uart_write_char(received);            // Transmit the received character.
+  41   2        }
+  42   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     70    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,11 @@
+--cpu Cortex-M3
+".\objects\startup_lpc17xx.o"
+".\objects\system_lpc17xx.o"
+".\objects\delay.o"
+".\objects\gpio.o"
+".\objects\softi2c.o"
+".\objects\main.o"
+--strict --scatter ".\Objects\PCA9685.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\PCA9685.map" -o .\Objects\PCA9685.axf

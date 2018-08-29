@@ -1,0 +1,10 @@
+--cpu Cortex-M3
+".\objects\startup_lpc17xx.o"
+".\objects\system_lpc17xx.o"
+".\objects\main.o"
+".\objects\gpio.o"
+".\objects\delay_ms.o"
+--strict --scatter ".\Objects\IR Board.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\IR Board.map" -o ".\Objects\IR Board.axf"

@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\objects\startup_lpc17xx.o"
+".\objects\adc.o"
+".\objects\delay_ms.o"
+".\objects\gpio.o"
+".\objects\main.o"
+".\objects\pwm.o"
+".\objects\split.o"
+".\objects\uart.o"
+".\objects\uart_int.o"
+".\objects\system_lpc17xx.o"
+--strict --scatter ".\Objects\Proximity Board.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Proximity Board.map" -o ".\Objects\Proximity Board.axf"
