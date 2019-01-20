@@ -1,6 +1,1 @@
-
-
-
-
-
 # Embedded Systems Basics
